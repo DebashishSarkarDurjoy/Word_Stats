@@ -1,3 +1,5 @@
+# A program to get the statistics of the words in a utf-8 encoded txt file.
+
 def make_stats(filename, new_filename, give_object=False):
     print("Loading....\n")
     record = {}
