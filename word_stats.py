@@ -27,14 +27,14 @@ def make_stats(filename, new_filename, give_object=False):
             new_file_object.write(f"{word} : {count} \n")
     
 
-def count_total_words(record):
+def count_total_words(record): # count the number of words in the record
     total = 0
     for values in record.keys():
         total += record[values] 
     return total
 
 
-def make_alphabet_list():
+def make_alphabet_list(): # function to make the alphabet list
     alphabets = []
     for i in range(ord("A"), ord("Z") + 1):
         alphabets.append(chr(i))
@@ -43,7 +43,7 @@ def make_alphabet_list():
     return alphabets
 
 
-def clean_string(string):
+def clean_string(string): # remove all non-alphabetic characters from the string
     """Take a string and return it removing all alphanumeric characters"""
     contents_arr = [(char) for char in string]
     i = 0
@@ -57,9 +57,10 @@ def clean_string(string):
 
 
 
-alphabets = make_alphabet_list()
-alphabets.append(" ")
+alphabets = make_alphabet_list() # make a list of alphabets
+alphabets.append(" ") # include space character in the alphabet list
 
-filename = "WarAndPeace.txt"
-new_filename = f"{filename[:-4]}_stats.txt"
-make_stats(filename, new_filename)
+file = input("Enter filename: ") # Get the filename from user
+filename = f"{file}.txt"
+new_filename = f"{filename[:-4]}_stats.txt" # format the name to add stats
+make_stats(filename, new_filename) # Call the main function
